@@ -58,3 +58,40 @@ or to get one movie pass the following, do the following.
         title
       }
     }
+    
+Controlling the amount of pages works as so.
+
+    query AllMoviesPagination{
+      allMovies(first: 2) {
+        pageInfo{
+          startCursor
+          endCursor
+          hasNextPage
+          hasPreviousPage
+        }
+        edges{
+          node{
+            id
+            title
+          }
+        }
+      }
+    }
+Pagination works as follows, below it means you want the first 2 results after the cursor item "TW92aWVOb2RlOjk=" which is the item you might of gotten in the original query(above):
+    
+    query AllMoviesPagination{
+      allMovies(first: 2, after: "TW92aWVOb2RlOjk=") {
+        pageInfo{
+          startCursor
+          endCursor
+          hasNextPage
+          hasPreviousPage
+        }
+        edges{
+          node{
+            id
+            title
+          }
+        }
+      }
+    }
