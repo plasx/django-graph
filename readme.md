@@ -5,11 +5,15 @@ Django Project utlizing Graphql to serve the models.
 
 to use install requirements.txt
 
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 
 then run the django server
 
-    python manage.py runserver
+    python3 manage.py runserver
+    
+Dump GraphQL Schema to schema.json. This is useful for frontend developers who don't have time to stand up their python environment for this application:
+    
+    python3 manage.py graphql_schema
     
 After that you can visit http://localhost:8000/graphql and query the following
 
